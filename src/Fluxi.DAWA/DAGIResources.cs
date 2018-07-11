@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Fluxi.DAWA
+﻿namespace Fluxi.DAWA
 {
     class DAGIResources
     {

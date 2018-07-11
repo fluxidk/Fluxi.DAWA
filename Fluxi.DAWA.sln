@@ -1,14 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27703.2000
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxi.DAWA", "src\Fluxi.DAWA\Fluxi.DAWA.csproj", "{EAD3B336-6C97-4661-B6DF-EEF5EC55B2BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxi.DAWA", "src\Fluxi.DAWA\Fluxi.DAWA.csproj", "{EAD3B336-6C97-4661-B6DF-EEF5EC55B2BD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{149AD84D-71F3-49C3-825F-5E2696118016}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreConsole", "examples\NetCoreConsole\NetCoreConsole.csproj", "{9E891340-DFEE-4AA0-B0C7-2A35E8A480FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{96DADF57-6499-40D1-9C8F-3ED89154A19D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +24,16 @@ Global
 		{EAD3B336-6C97-4661-B6DF-EEF5EC55B2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAD3B336-6C97-4661-B6DF-EEF5EC55B2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAD3B336-6C97-4661-B6DF-EEF5EC55B2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E891340-DFEE-4AA0-B0C7-2A35E8A480FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E891340-DFEE-4AA0-B0C7-2A35E8A480FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E891340-DFEE-4AA0-B0C7-2A35E8A480FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E891340-DFEE-4AA0-B0C7-2A35E8A480FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E891340-DFEE-4AA0-B0C7-2A35E8A480FD} = {96DADF57-6499-40D1-9C8F-3ED89154A19D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {38D4D3EC-998C-4992-B25F-F8E1B6D7F8CC}
