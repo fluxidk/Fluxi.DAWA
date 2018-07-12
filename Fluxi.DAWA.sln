@@ -7,10 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluxi.DAWA", "src\Fluxi.DAW
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{149AD84D-71F3-49C3-825F-5E2696118016}"
 	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreConsole", "examples\NetCoreConsole\NetCoreConsole.csproj", "{9E891340-DFEE-4AA0-B0C7-2A35E8A480FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreConsole", "examples\NetCoreConsole\NetCoreConsole.csproj", "{9E891340-DFEE-4AA0-B0C7-2A35E8A480FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{96DADF57-6499-40D1-9C8F-3ED89154A19D}"
 EndProject
