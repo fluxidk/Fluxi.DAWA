@@ -14,12 +14,9 @@ namespace Fluxi.DAWA
             _apiClient = apiClient;
         }
 
-        public async Task<Address> GetAddress(string id)
+        public async Task<Address> GetAddress(string addressId)
         {
-            var request = new RestRequest($"/adresser/{id}");
-            var response = await _apiClient.ExecuteTaskAsync<Address>(request);
-
-            return response.Data;
+            return await new GetBase<Address>(_apiClient, "adresser", addressId).Execute();
         }
 
         public SearchBase<Address> SearchAddress()
@@ -27,12 +24,9 @@ namespace Fluxi.DAWA
             return new SearchBase<Address>(_apiClient, "adresser");
         }
 
-        public async Task<AccessAddress> GetAccessAddress(string id)
+        public async Task<AccessAddress> GetAccessAddress(string accessAddressId)
         {
-            var request = new RestRequest($"/adgangsadresser/{id}");
-            var response = await _apiClient.ExecuteTaskAsync<AccessAddress>(request);
-
-            return response.Data;
+            return await new GetBase<AccessAddress>(_apiClient, "adgangsadresser", accessAddressId).Execute();
         }
 
         public SearchBase<AccessAddress> SearchAccessAddress()
@@ -40,17 +34,24 @@ namespace Fluxi.DAWA
             return new SearchBase<AccessAddress>(_apiClient, "adgangsadresser");
         }
 
-        public async Task<ZipcodeDetails> GetZipcode(string id)
+        public async Task<ZipcodeDetails> GetZipcode(string zipcode)
         {
-            var request = new RestRequest($"/postnumre/{id}");
-            var response = await _apiClient.ExecuteTaskAsync<ZipcodeDetails>(request);
-
-            return response.Data;
+            return await new GetBase<ZipcodeDetails>(_apiClient, "postnumre", zipcode).Execute();
         }
 
         public SearchBase<ZipcodeDetails> SearchZipcode()
         {
             return new SearchBase<ZipcodeDetails>(_apiClient, "postnumre");
+        }
+
+        public async Task<RoadsegmentDetails> GetRoadsegment(string municipalCode, string roadCode)
+        {
+            return await new GetBase<RoadsegmentDetails>(_apiClient, "vejstykker", $"{municipalCode}/{roadCode}").Execute();
+        }
+
+        public SearchBase<RoadsegmentDetails> SearchRoadsegment()
+        {
+            return new SearchBase<RoadsegmentDetails>(_apiClient, "vejstykker");
         }
     }
 }

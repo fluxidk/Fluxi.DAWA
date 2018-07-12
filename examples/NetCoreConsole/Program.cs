@@ -19,12 +19,13 @@ namespace NetCoreConsole
             //    .Execute()
             //    .Wait();
 
-            dawa.Address.GetZipcode("8670").Wait();
+            var kk = dawa.Address.GetRoadsegment("0101", "316").Result;
 
-            dawa.Address.SearchZipcode()
-                .AddParameter(ZipcodeParam.Name, "Låsby")
+            var qqq = dawa.Address.SearchRoadsegment()
+                .AddParameter(RoadsegmentParam.Name, "Søndergade")
+                .AddParameter(RoadsegmentParam.Zipcode, "8670")
                 .Execute()
-                .Wait();
+                .Result;
         }
     }
 }

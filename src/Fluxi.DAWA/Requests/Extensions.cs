@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fluxi.DAWA.Requests
 {
-    public static class SearchExtensions
+    public static class Extensions
     {
         public static string GetParameterName(this Enum value)
         {
@@ -46,9 +46,23 @@ namespace Fluxi.DAWA.Requests
             return ar;
         }
 
+        public static SearchBase<RoadsegmentDetails> AddParameter(this SearchBase<RoadsegmentDetails> ar, RoadsegmentParam param, string value)
+        {
+            ar.ApiRequest.AddQueryParameter(param.GetParameterName(), value);
+
+            return ar;
+        }
+
         public static async Task<List<T>> Execute<T>(this SearchBase<T> ar) where T : class
         {
             var response = await ar.ApiClient.ExecuteTaskAsync<List<T>>(ar.ApiRequest);
+
+            return response.Data;
+        }
+
+        public static async Task<T> Execute<T>(this GetBase<T> ar) where T : class
+        {
+            var response = await ar.ApiClient.ExecuteTaskAsync<T>(ar.ApiRequest);
 
             return response.Data;
         }

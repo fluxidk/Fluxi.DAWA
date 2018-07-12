@@ -12,7 +12,7 @@ namespace Fluxi.DAWA.Requests
             ApiClient = apiClient;
             ApiRequest = new RestRequest(searchPath, Method.GET);
         }
-
+        
         public SearchBase()
         {
 
