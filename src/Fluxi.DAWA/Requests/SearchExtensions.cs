@@ -39,6 +39,13 @@ namespace Fluxi.DAWA.Requests
             return ar;
         }
 
+        public static SearchBase<ZipcodeDetails> AddParameter(this SearchBase<ZipcodeDetails> ar, ZipcodeParam param, string value)
+        {
+            ar.ApiRequest.AddQueryParameter(param.GetParameterName(), value);
+
+            return ar;
+        }
+
         public static async Task<List<T>> Execute<T>(this SearchBase<T> ar) where T : class
         {
             var response = await ar.ApiClient.ExecuteTaskAsync<List<T>>(ar.ApiRequest);

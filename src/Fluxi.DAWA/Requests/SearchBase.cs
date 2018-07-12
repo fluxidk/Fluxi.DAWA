@@ -7,10 +7,10 @@ namespace Fluxi.DAWA.Requests
         internal IRestClient ApiClient { get; set; }
         internal RestRequest ApiRequest { get; set; }
 
-        public SearchBase(IRestClient apiClient, RestRequest apiRequest)
+        public SearchBase(IRestClient apiClient, string searchPath)
         {
             ApiClient = apiClient;
-            ApiRequest = apiRequest;
+            ApiRequest = new RestRequest(searchPath, Method.GET);
         }
 
         public SearchBase()

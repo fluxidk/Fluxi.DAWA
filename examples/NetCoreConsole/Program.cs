@@ -10,11 +10,19 @@ namespace NetCoreConsole
         {
             var dawa = new DAWAClient();
 
-            //dawa.Address.GetAddress("0a3f509f-4cd7-32b8-e044-0003ba298018").Wait();
+            //dawa.Address.GetAddress("0a3f50c2-25c4-32b8-e044-0003ba298018").Wait();
 
-            dawa.Address.SearchAccessAddress()
-                .AddParameter(AccessAddressParam.Roadname, "Søndergade")
-                .AddParameter(AccessAddressParam.Zipcode, "8670")
+            //dawa.Address.SearchAccessAddress()
+            //    .AddParameter(AccessAddressParam.Roadname, "Danmarksvej")
+            //    .AddParameter(AccessAddressParam.HouseNo, "26")
+            //    .AddParameter(AccessAddressParam.Zipcode, "8660")
+            //    .Execute()
+            //    .Wait();
+
+            dawa.Address.GetZipcode("8670").Wait();
+
+            dawa.Address.SearchZipcode()
+                .AddParameter(ZipcodeParam.Name, "Låsby")
                 .Execute()
                 .Wait();
         }

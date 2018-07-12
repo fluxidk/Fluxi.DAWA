@@ -24,7 +24,7 @@ namespace Fluxi.DAWA
 
         public SearchBase<Address> SearchAddress()
         {
-            return new SearchBase<Address>(_apiClient, new RestRequest("/adresser"));
+            return new SearchBase<Address>(_apiClient, "adresser");
         }
 
         public async Task<AccessAddress> GetAccessAddress(string id)
@@ -37,7 +37,20 @@ namespace Fluxi.DAWA
 
         public SearchBase<AccessAddress> SearchAccessAddress()
         {
-            return new SearchBase<AccessAddress>(_apiClient, new RestRequest("/adgangsadresser"));
+            return new SearchBase<AccessAddress>(_apiClient, "adgangsadresser");
+        }
+
+        public async Task<ZipcodeDetails> GetZipcode(string id)
+        {
+            var request = new RestRequest($"/postnumre/{id}");
+            var response = await _apiClient.ExecuteTaskAsync<ZipcodeDetails>(request);
+
+            return response.Data;
+        }
+
+        public SearchBase<ZipcodeDetails> SearchZipcode()
+        {
+            return new SearchBase<ZipcodeDetails>(_apiClient, "postnumre");
         }
     }
 }
