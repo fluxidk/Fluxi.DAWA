@@ -53,5 +53,10 @@ namespace Fluxi.DAWA
         {
             return new SearchBase<RoadsegmentDetails>(_apiClient, "vejstykker");
         }
+
+        public async Task<DataCleaning> DataCleaningAddress(string input)
+        {
+            return await new GetBase<DataCleaning>(_apiClient, "datavask/adresser", "?betegnelse=" + input).Execute();
+        }
     }
 }

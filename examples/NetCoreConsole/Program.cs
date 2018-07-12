@@ -1,6 +1,5 @@
 ﻿using Fluxi.DAWA;
 using Fluxi.DAWA.Requests;
-using System;
 
 namespace NetCoreConsole
 {
@@ -19,13 +18,7 @@ namespace NetCoreConsole
             //    .Execute()
             //    .Wait();
 
-            var kk = dawa.Address.GetRoadsegment("0101", "316").Result;
-
-            var qqq = dawa.Address.SearchRoadsegment()
-                .AddParameter(RoadsegmentParam.Name, "Søndergade")
-                .AddParameter(RoadsegmentParam.Zipcode, "8670")
-                .Execute()
-                .Result;
+            var mmm = dawa.Address.DataCleaningAddress("Danmarksvej 26, 8660 Skanderbårg").Result;
         }
     }
 }
