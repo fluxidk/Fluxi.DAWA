@@ -7,7 +7,7 @@ A .NET SDK for developing against the DAWA API
 
 ## Supported data
 | Resource          | Instance      | Name              | Impl. | Get | Search | Cleaning |
-|-------------------|-------------- |-------------------|-------|--------|----------|
+|-------------------|-------------- |-------------------|-------|-----|--------|----------|
 | Adresser          | Address       | Address           | Yes   | x   | x      | x        |
 | Adgangsadresser   | Address       | AccessAddress     | Yes   | x   | x      | x        |
 | Postnumre         | Address       | Zipcode           | Yes   | x   | x      |          |
