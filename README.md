@@ -28,10 +28,15 @@ A .NET SDK for developing against the DAWA API
 var dawa = new DAWAClient();
 ```
 
+Below are some examples of how `Get`, `Search`, and `Cleaning` work. Not all supported data and features are listed as examples.
+
 ### Get
 ```csharp
 // Get address by id
 await dawa.Address.GetAddress("0a3f50c2-25c4-32b8-e044-0003ba298018");
+
+// Get roadsegment by codes
+awwait dawa.Address.GetRoadsegment("0101", "316");
 ```
 
 ### Search
@@ -41,7 +46,12 @@ await dawa.Address.SearchAddress()
                 .AddParameter(AddressParam.Roadname, "Danmarksvej")
                 .AddParameter(AddressParam.HouseNo, "26")
                 .AddParameter(AddressParam.Zipcode, "8660")
-                .Execute()
+                .Execute();
+
+// Search roadsegments
+await dawa.Address.SearchRoadsegment()
+                .AddParameter(RoadsegmentParam.MunicipalCode, "0101")
+                .Execute();
 ```
 
 ### Cleaning
