@@ -24,16 +24,17 @@ A .NET SDK for developing against the DAWA API
 
 ## Getting started
 ```csharp
+// Create instance of the DAWA SDK client
 var dawa = new DAWAClient();
 ```
 
-### Search by id
+### Get
 ```csharp
 // Get address by id
 await dawa.Address.GetAddress("0a3f50c2-25c4-32b8-e044-0003ba298018");
 ```
 
-### Search by parameters
+### Search
 ```csharp
 // Search address
 await dawa.Address.SearchAddress()
@@ -43,8 +44,11 @@ await dawa.Address.SearchAddress()
                 .Execute()
 ```
 
-### Data cleaning address
+### Cleaning
 ```csharp
 // Cleaning or validate address
 await dawa.Address.DataCleaningAddress("Danmarksvej 26, 8660 Skanderbårg");
 ```
+
+### Examples
+[See examples here](examples/)
