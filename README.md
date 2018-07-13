@@ -6,12 +6,21 @@ A .NET SDK for developing against the DAWA API
 .NET Framework 4.5.2 or .NET Standard 2.0
 
 ## Supported data
-| Resource        | Name            | Get | Search | Cleaning |
-|-----------------|-----------------|-----|--------|----------|
-| Adresser        | Address         | x   | x      | x        |
-| Adgangsadresser | AccessAddress   | x   | x      |          |
-| Postnumre       |  Zipcode        | x   | x      |          |
-| Vejstykker      |  Roadsegment    | x   | x      |          |
+| Resource          | Instance      | Name              | Impl. | Get | Search | Cleaning |
+|-------------------|-------------- |-------------------|-------|--------|----------|
+| Adresser          | Address       | Address           | Yes   | x   | x      | x        |
+| Adgangsadresser   | Address       | AccessAddress     | Yes   | x   | x      | x        |
+| Postnumre         | Address       | Zipcode           | Yes   | x   | x      |          |
+| Vejstykker        | Address       | Roadsegment       | Yes   | x   | x      |          |
+| Kommuner          | DAGI          | Municipalities    |       | x   | x      |          |
+| Politikredse      | DAGI          | PoliceAreas       |       | x   | x      |          |
+| Regioner          | DAGI          | Regions           |       | x   | x      |          |
+| Retskredse        | DAGI          | Jurisdictions     |       | x   | x      |          |
+| Sogne             | DAGI          | Parish            |       | x   | x      |          |
+| Ejerlav           | CadastralMap  | OwnerSssociations |       | x   | x      |          |
+| Jordstykker       | CadastralMap  | Plots             |       | x   | x      |          |
+
+**Please note: Not all resources are avaiable yet!**
 
 ## Getting started
 ```csharp
